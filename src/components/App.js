@@ -3,15 +3,20 @@ import AboutPage from "./AboutPage";
 import Header from "./common/Header";
 import CoursesPage from "./CoursesPage";
 import HomePage from "./HomePage";
-import { Route } from "react-router-dom";
+import NotFoundPage from "./NotFoundPage";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="container-fluid">
       <Header />
-      <Route exact path="/" component={HomePage}></Route>
-      <Route path="/courses" component={CoursesPage}></Route>
-      <Route path="/about" component={AboutPage}></Route>
+      <Switch>
+        {/* Only one route will match */}
+        <Route exact path="/" component={HomePage}></Route>
+        <Route path="/courses" component={CoursesPage}></Route>
+        <Route path="/about" component={AboutPage}></Route>
+        <Route component={NotFoundPage}></Route>
+      </Switch>
     </div>
   );
 }
