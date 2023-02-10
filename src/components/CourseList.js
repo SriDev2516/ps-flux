@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 function CourseList(props) {
   return (
     <>
+      <Link to="course" className="btn btn-primary mb-2">
+        Add Course
+      </Link>
+      <br />
       <table className="table">
         <thead>
           <tr>
